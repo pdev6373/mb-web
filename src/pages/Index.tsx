@@ -72,7 +72,7 @@ const Index = () => {
 
   const openEmailClient = () =>
     (window.location.href =
-      'mailto:support@mbexchange.com?subject=Contact%20MB%20Exchange');
+      'mailto:info@mbexchangehub.com?subject=Contact%20MB%20Exchange');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
