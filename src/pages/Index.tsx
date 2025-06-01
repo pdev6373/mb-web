@@ -70,9 +70,12 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const openEmailClient = () =>
-    (window.location.href =
-      'mailto:info@mbexchangehub.com?subject=Contact%20MB%20Exchange');
+  const openEmailClient = () => {
+    window.open(
+      'mailto:info@mbexchangehub.com?subject=Contact%20MB%20Exchange',
+      '_blank',
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
@@ -405,7 +408,7 @@ const Index = () => {
                   Call Us
                 </h3>
                 <p className="text-gray-200 mb-4">24/7 customer support</p>
-                <p className="text-red-400 font-medium">+1 (555) 123-4567</p>
+                <p className="text-red-400 font-medium">+234 (703) 973 4721</p>
               </CardContent>
             </Card>
             <Card className="bg-slate-800/80 border-red-500/30 hover:border-red-500/50 transition-all duration-300 transform hover:scale-105 group">
@@ -416,9 +419,9 @@ const Index = () => {
                 </h3>
                 <p className="text-gray-200 mb-4">Our headquarters</p>
                 <p className="text-red-400 font-medium">
-                  123 Crypto Street
+                  Ilom Street,
                   <br />
-                  San Francisco, CA 94102
+                  Woji Road, Portharcourt
                 </p>
               </CardContent>
             </Card>
@@ -427,7 +430,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 px-6">
+      <section id="faq" className="py-20 px-6 max-w-5xl mx-auto">
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -537,7 +540,7 @@ const Index = () => {
               </p>
               <div className="bg-white px-6 py-5 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 w-fit flex flex-col items-center">
                 <QRCode
-                  value="Coming Soon"
+                  value="https://goldchain-files.s3.us-east-1.amazonaws.com/MB+Exchange.apk"
                   className="w-36 h-36 text-gray-800"
                 />
                 <p className="text-sm text-gray-600 mt-4 font-semibold text-center">
@@ -565,12 +568,12 @@ const Index = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#faq"
-                    className="hover:text-red-400 transition-colors duration-200"
+                  <div
+                    onClick={openEmailClient}
+                    className="hover:text-red-400 transition-colors duration-200 cursor-pointer"
                   >
                     Support
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -608,7 +611,7 @@ const Index = () => {
                 Download
               </h3>
               <div className="space-y-3 flex flex-col">
-                <a
+                {/* <a
                   href="#"
                   className="flex w-44 items-center gap-3 px-5 py-3 bg-black text-white rounded-lg shadow hover:scale-105 transition-transform"
                 >
@@ -617,10 +620,11 @@ const Index = () => {
                     <p className="text-xs">Download on the</p>
                     <p className="text-sm font-semibold">App Store</p>
                   </div>
-                </a>
+                </a> */}
 
                 <a
-                  href="#"
+                  href="https://goldchain-files.s3.us-east-1.amazonaws.com/MB+Exchange.apk"
+                  download
                   className="flex w-44 items-center gap-3 px-5 py-3 bg-black text-white rounded-lg shadow hover:scale-105 transition-transform"
                 >
                   <img
@@ -642,16 +646,18 @@ const Index = () => {
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
-                href="#"
+                target="_blank"
+                href="/privacy-policy"
                 className="text-gray-400 hover:text-red-400 transition-colors duration-200"
               >
                 Privacy Policy
               </a>
               <a
-                href="#"
+                target="_blank"
+                href="/terms-of-use"
                 className="text-gray-400 hover:text-red-400 transition-colors duration-200"
               >
-                Terms of Service
+                Terms of Use
               </a>
               <button
                 onClick={openEmailClient}

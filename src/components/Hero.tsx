@@ -20,7 +20,7 @@ export default function Hero() {
               assets with MB Exchange.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <a
+              {/* <a
                 href="#"
                 className="flex items-center gap-3 px-5 py-3 bg-black text-white rounded-lg shadow hover:scale-105 transition-transform w-44"
               >
@@ -29,10 +29,11 @@ export default function Hero() {
                   <p className="text-xs">Download on the</p>
                   <p className="text-sm font-semibold">App Store</p>
                 </div>
-              </a>
+              </a> */}
 
               <a
-                href="#"
+                href="https://goldchain-files.s3.us-east-1.amazonaws.com/MB+Exchange.apk"
+                download
                 className="flex items-center gap-3 px-5 py-3 bg-black text-white rounded-lg shadow hover:scale-105 transition-transform w-44"
               >
                 <img
@@ -48,7 +49,10 @@ export default function Hero() {
             </div>
 
             <div className="bg-white px-6 py-5 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 w-fit flex flex-col items-center">
-              <QRCode value="Coming Soon" className="w-36 h-36 text-gray-800" />
+              <QRCode
+                value="https://goldchain-files.s3.us-east-1.amazonaws.com/MB+Exchange.apk"
+                className="w-36 h-36 text-gray-800"
+              />
               <p className="text-sm text-gray-600 mt-4 font-semibold text-center">
                 Scan to Download
               </p>
